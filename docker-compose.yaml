@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  jexus:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jexus
+    network_mode: host
+    working_dir: /usr/jexus
+    # ulimits:
+    #   nofile:
+    #     soft: "262144"
+    #     hard: "262144"
+    user: "jexus"
+    stdin_open: true
+    tty: true
+    command: /bin/bash
